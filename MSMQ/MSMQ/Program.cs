@@ -17,11 +17,15 @@ namespace MSMQ
             queue.Formatter = new XmlMessageFormatter();
 
             int id = 0;
-            while (true)
+            //while (true)
+            //{
+            //    Console.ReadKey();
+            //    queue.Send(new WorkItem(++id));
+            //    Console.WriteLine("Sending message with ID: {0}", id);
+            //}
+            for (int i = 0; i < 10000; i++)
             {
-                Console.ReadKey();
                 queue.Send(new WorkItem(++id));
-                Console.WriteLine("Sending message with ID: {0}", id);
             }
         }
 
