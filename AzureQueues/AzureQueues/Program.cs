@@ -21,7 +21,7 @@ namespace AzureQueues
             {
                 var message = new CloudQueueMessage("I am message number " + i++);
                 queue.AddMessage(message);
-                Console.Read();
+                Console.ReadLine();
             }
         }
     }
