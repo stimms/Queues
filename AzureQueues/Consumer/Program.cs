@@ -20,7 +20,14 @@ namespace Consumer
                 var message = queue.GetMessage();
                 if (message != null)
                 {
-                    Console.WriteLine(message.AsString);
+                    try
+                    {
+                        Console.WriteLine(message.AsString);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Unable to decode message");
+                    }
                     queue.DeleteMessage(message);
                 }
             }
